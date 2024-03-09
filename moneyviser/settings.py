@@ -28,7 +28,7 @@ DEBUG = True
 # Ensure that CSRF cookies are only sent over HTTPS connections
 CSRF_COOKIE_SECURE = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['*','moneywiser-app.azurewebsites.net']
 
 
 # Application definition
@@ -64,6 +64,7 @@ TEMPLATES = [
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
+                'django.template.context_processors.csrf',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
