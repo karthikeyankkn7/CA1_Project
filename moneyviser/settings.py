@@ -55,6 +55,8 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'moneyviser.urls'
 
+CSRF_TRUSTED_ORIGINS = ["moneywiser-app.azurewebsites.net"]
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',

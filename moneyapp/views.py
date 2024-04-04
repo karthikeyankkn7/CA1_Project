@@ -12,6 +12,7 @@ from django.core import signing
 from collections import defaultdict
 from django.views.decorators.csrf import csrf_exempt
 
+
 @csrf_exempt
 def loginUser(request):
     if request.user.is_authenticated:
@@ -33,7 +34,7 @@ def loginUser(request):
         return render(request,'safe/Login.html',context)
 
 
-
+@csrf_exempt
 def registerUser(request):
     if request.user.is_authenticated:
         return redirect('/')
