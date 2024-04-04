@@ -51,6 +51,7 @@ def registerUser(request):
         context={ 'form': form }
         return render(request,'safe/Register.html',context)
 
+@csrf_exempt
 @login_required(login_url='login')
 def home(request):
     
