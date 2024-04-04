@@ -89,7 +89,7 @@ def logoutUser(request):
     logout(request)
     return redirect('login')
 
-
+@csrf_exempt
 def Expenselist(request):
     
     safe_value=[]
