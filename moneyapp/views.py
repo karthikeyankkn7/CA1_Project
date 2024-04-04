@@ -10,7 +10,9 @@ from .forms import CreateUForm
 from django.contrib.sessions.models import Session
 from django.core import signing
 from collections import defaultdict
+from django.views.decorators.csrf import csrf_exempt
 
+@csrf_exempt
 def loginUser(request):
     if request.user.is_authenticated:
         return redirect('/')
@@ -92,7 +94,8 @@ def Expenselist(request):
     value=defaultdict(list)
     context={}
     userloggedin=int(request.user.id)
-    userloggedin=userloggedin-1
+    print(userloggedin)
+    # userloggedin=userloggedin-1
    
     
     for safe in Expense_Split.objects.all().filter(reciept_id=userloggedin):
